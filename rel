@@ -9,7 +9,7 @@ export RC=rc
 
 REF=${REF:-master}
 get() {
-  curl -s -o $1 https://gitlab.com/northscaler-public/release-management/-/raw/$REF/$1 && chmod +x $1
+  curl -s -o $1 https://github.com/ballistagroup/release-management/-/raw/$REF/$1 && chmod +x $1
 }
 
 get release

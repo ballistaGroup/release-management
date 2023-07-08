@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = "com.northscaler"
+group = "com.ballistagroup"
 version = "1.0.0-pre.0"
 sourceCompatibility = "11"
 project.ext.ignoreTests = true

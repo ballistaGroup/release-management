@@ -1,9 +1,9 @@
-# `master` Branch Deprecation Notice: Use [dev](https://gitlab.com/northscaler-public/release-management/-/tree/dev)!
+# `master` Branch Deprecation Notice: Use [dev](https://github.com/ballistagroup/release-management/-/tree/dev)!
 
 > NOTE: the content in this branch is now frozen and will undergo no further development.
 > All new development will happen in the `dev` branch, however, the `master` branch will continue to be the default branch for backward compatibility.
 > You are encouraged to upgrade to the new releases beginning with 2.x.
-> Please see [the `dev` branch](https://gitlab.com/northscaler-public/release-management/-/tree/dev) for more information, including the [migration guide](https://gitlab.com/northscaler-public/release-management/-/blob/dev/migrating-from-pre-2.x.md).
+> Please see [the `dev` branch](https://github.com/ballistagroup/release-management/-/tree/dev) for more information, including the [migration guide](https://github.com/ballistagroup/release-management/-/blob/dev/migrating-from-pre-2.x.md).
 
 # Release Management Scripts
 
@@ -16,8 +16,8 @@ version (`vx.y`) and only patches for that release go into its minor branch.
 ## TL;DR
 
 ```sh
-$ git clone git@github.com:northscaler-public/release-management.git /tmp/northscaler/release-management
-$ alias release=/tmp/northscaler/release-management/release
+$ git clone git@github.com:ballistagroup/release-management.git /tmp/ballistagroup/release-management
+$ alias release=/tmp/ballistagroup/release-management/release
 $
 $ # For a Node.js project using npm:
 $ release nodejs pre   # release a preview
@@ -77,7 +77,7 @@ $ docker run \
     -v ~/.ssh/id_rsa:/root/.ssh/id_rsa \
     -v ~/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub \
     -v $PWD:/gitrepo \
-    northscaler/release \
+    ballistagroup/release \
     nodejs pre
 ```
 
@@ -150,11 +150,13 @@ If you need to support other project types, see below for developer information.
 You need to have `bash` with `git` & `docker` installed in order to run the scripts natively. You'll also need the
 technology-specific tools, like `npm` if you're using `nodejs`.
 
+
 ## Running via Docker
+**NOTE this needs to be updated**
 
 You can also forgo all dependencies except `docker` and use this strategy via its Docker containers, as these scripts
-have been Dockerized under the `northscaler` organization on [Docker Hub](https://hub.docker.com). For example,
-see https://hub.docker.com/r/northscaler/release.
+have been Dockerized under the `ballistagroup` organization on [Docker Hub](https://hub.docker.com). For example,
+see https://hub.docker.com/r/ballistagroup/release.
 
 All you really have to do is map a volume containing the root of your git repo to `/gitrepo` and set the `EMAIL`
 environment variable. You might also want to include other environment variables supported by git;
@@ -162,7 +164,7 @@ see https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables. If your 
 git repo:
 
 ```
-$ docker run --rm -i -v "$PWD:/gitrepo" -e EMAIL=you@example.com northscaler/release xxx pre # or rc, minor, patch, ...
+$ docker run --rm -i -v "$PWD:/gitrepo" -e EMAIL=you@example.com ballistagroup/release xxx pre # or rc, minor, patch, ...
 ```
 
 Just replace `xxx` above with `image`, `chart`, `nodejs`, `version`, any combination thereof (separated by `+`,

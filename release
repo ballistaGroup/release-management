@@ -23,7 +23,7 @@ fi
 RM_ANTICOLLISION_SUFFIX=.this
 
 get() {
-  $fetch https://gitlab.com/northscaler-public/release-management/-/raw/$RM_VERSION/$1 > "$THIS_ABSPATH/$1$RM_ANTICOLLISION_SUFFIX" && \
+  $fetch https://raw.githubusercontent.com/ballistaGroup/release-management/$RM_VERSION/release/$1 > "$THIS_ABSPATH/$1$RM_ANTICOLLISION_SUFFIX" && \
   chmod +x "$THIS_ABSPATH/$1$RM_ANTICOLLISION_SUFFIX"
 }
 
